@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Nana | Toko Resmi Branded Sneakers & Streetwear</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-rose-500 selection:text-white">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-emerald-600 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span id="toast-message" class="font-medium text-sm">Pesanan berhasil diproses!</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="bg-gradient-to-tr from-rose-600 to-pink-500 p-2.5 rounded-xl shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-shoe-prints text-white text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider bg-gradient-to-r from-white via-slate-200 to-rose-400 bg-clip-text text-transparent">WILD NANA</span>
+                    <span class="block text-[10px] tracking-widest text-rose-400 font-bold uppercase">Branded Original Shoes</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="hover:text-rose-400 transition-colors">Beranda</a>
+                <a href="#katalog" class="hover:text-rose-400 transition-colors">Katalog & Stok</a>
+                <a href="#metode-pembayaran" class="hover:text-rose-400 transition-colors">Metode Pembayaran</a>
+                <a href="#kontak" class="hover:text-rose-400 transition-colors">Kontak WA</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wild%20Nana,%20saya%20ingin%20bertanya%20mengenai%20stok%20sepatu%20branded" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-emerald-600/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Order via WA</span>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-white">Beranda</a>
+            <a href="#katalog" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-white">Katalog & Stok</a>
+            <a href="#metode-pembayaran" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-white">Metode Pembayaran</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 hover:text-white">Kontak WA</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-emerald-600 text-white py-2.5 rounded-xl font-semibold mt-3">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Order via WA</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(244,63,94,0.12),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-rose-300">
+                        <i class="fa-solid fa-shield-halved text-rose-400"></i>
+                        <span>100% Brand New In Box (BNIB) Original Official Store</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                        Toko Jual Beli <span class="bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 bg-clip-text text-transparent">Sepatu Branded</span> Terbaru & Terlengkap
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Selamat datang di toko resmi <strong class="text-white">Wild Nana</strong>. Temukan sepatu branded impianmu lengkap dengan info ukuran, spesifikasi detail, sisa stok, serta sistem pembayaran flexible: Cash, Angsuran/PayLater via E-Wallet (DANA, OVO, GoPay), hingga Transfer Bank Resmi (BCA, BSI, Mandiri / BM).
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
+                        <a href="#katalog" class="w-full sm:w-auto bg-rose-600 hover:bg-rose-500 text-white px-8 py-4 rounded-xl font-bold text-center transition-all shadow-xl shadow-rose-600/30 flex items-center justify-center space-x-2">
+                            <span>Cek Katalog & Tabel Stok</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Wild%20Nana,%20mau%20konsultasi%20size%20dan%20sepatu" target="_blank" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-xl font-bold text-center transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Chat WA Admin</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-rose-600 to-amber-600 opacity-30 blur-xl"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-5">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">Wild_Nana_Official_System</span>
+                            </div>
+                            <div class="space-y-3.5">
+                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-emerald-500/10 text-emerald-400 p-3 rounded-xl">
+                                            <i class="fa-solid fa-wallet text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-400 font-medium">E-Wallet & Angsuran</p>
+                                            <p class="text-sm font-bold text-white">DANA / OVO / GoPay / ShopeePay</p>
+                                        </div>
+                                    </div>
+                                    <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold">Aktif</span>
+                                </div>
+                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-rose-500/10 text-rose-400 p-3 rounded-xl">
+                                            <i class="fa-solid fa-building-columns text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-400 font-medium">Transfer Bank</p>
+                                            <p class="text-sm font-bold text-white">BCA / BSI / Bank Mandiri (BM)</p>
+                                        </div>
+                                    </div>
+                                    <span class="bg-rose-500/20 text-rose-400 text-xs px-2.5 py-1 rounded-full font-semibold">Resmi</span>
+                                </div>
+                                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="bg-amber-500/10 text-amber-400 p-3 rounded-xl">
+                                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-400 font-medium">Layanan WA Instant</p>
+                                            <p class="text-sm font-bold text-white">0812-3456-7890</p>
+                                        </div>
+                                    </div>
+                                    <span class="bg-amber-500/20 text-amber-400 text-xs px-2.5 py-1 rounded-full font-semibold">Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section with Table & Grid View -->
+    <section id="katalog" class="py-20 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 space-y-4 md:space-y-0">
+                <div>
+                    <span class="text-rose-400 text-xs font-bold uppercase tracking-widest">Inventory Wild Nana</span>
+                    <h2 class="text-3xl font-black text-white mt-1">Katalog Sepatu Branded & Stok Real-Time</h2>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <input type="text" id="search-input" placeholder="Cari model, merk, spesifikasi..." class="bg-slate-900 border border-slate-800 text-slate-200 placeholder-slate-500 px-4 py-2.5 rounded-xl text-sm focus:outline-none focus:border-rose-500 w-full sm:w-64">
+                    <div class="flex bg-slate-900 border border-slate-800 p-1 rounded-xl">
+                        <button onclick="switchView('grid')" id="btn-grid" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 text-white transition-all">Grid</button>
+                        <button onclick="switchView('table')" id="btn-table" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all">Tabel Lengkap</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Filters -->
+            <div class="flex flex-wrap gap-2 mb-8" id="brand-filters">
+                <button onclick="filterBrand('all')" class="brand-btn active-filter px-4 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white transition-all">Semua Brand</button>
+                <button onclick="filterBrand('Nike')" class="brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Nike</button>
+                <button onclick="filterBrand('Adidas')" class="brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Adidas</button>
+                <button onclick="filterBrand('New Balance')" class="brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">New Balance</button>
+                <button onclick="filterBrand('Salomon')" class="brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Salomon</button>
+                <button onclick="filterBrand('Asics')" class="brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all">Asics</button>
+            </div>
+
+            <!-- Grid View -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript dynamic render -->
+            </div>
+
+            <!-- Table View -->
+            <div id="product-table-view" class="hidden overflow-x-auto bg-slate-900 border border-slate-800 rounded-2xl shadow-xl">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-950 text-slate-400 text-xs font-semibold uppercase tracking-wider border-b border-slate-800">
+                            <th class="py-4 px-6">Produk & Model</th>
+                            <th class="py-4 px-6">Ukuran (Size)</th>
+                            <th class="py-4 px-6">Harga (IDR)</th>
+                            <th class="py-4 px-6">Jumlah Stok</th>
+                            <th class="py-4 px-6">Spesifikasi Lengkap</th>
+                            <th class="py-4 px-6 text-center">Order via WA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body" class="divide-y divide-slate-800 text-sm text-slate-300">
+                        <!-- Javascript dynamic render -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="metode-pembayaran" class="py-20 bg-slate-900/50 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-rose-400 text-xs font-bold uppercase tracking-widest">Kemudahan Bertransaksi</span>
+                <h2 class="text-3xl font-black text-white mt-1">Pembayaran Cash, Angsuran E-Wallet & Transfer Bank</h2>
+                <p class="text-slate-400 text-sm mt-2">Wild Nana menyediakan berbagai metode pembayaran aman agar transaksi pembelian sepatu branded idamanmu semakin gampang.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- E-Wallet & Angsuran -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6 hover:border-rose-500/50 transition-all">
+                    <div class="bg-rose-600/10 text-rose-400 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Cash & Angsuran E-Wallet</h3>
+                        <p class="text-slate-400 text-xs mt-1">Cash Saldo / Angsuran PayLater</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span><strong>DANA</strong> (Saldo Cash & Angsuran DANA Cicil)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span><strong>OVO</strong> (Cash / OVO PayLater)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span><strong>GoPay</strong> (GoPay Cash & Cicilan GoPayLater)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>ShopeePay & LinkAja</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transfer Bank -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6 hover:border-rose-500/50 transition-all">
+                    <div class="bg-pink-600/10 text-pink-400 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Transfer Bank Resmi</h3>
+                        <p class="text-slate-400 text-xs mt-1">Verifikasi Pembayaran Cepat</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-pink-400"></i>
+                            <span><strong>BCA</strong> (Bank Central Asia)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-pink-400"></i>
+                            <span><strong>BSI</strong> (Bank Syariah Indonesia)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-pink-400"></i>
+                            <span><strong>BM</strong> (Bank Mandiri)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-pink-400"></i>
+                            <span>Bank BNI & BRI</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pengiriman Cepat -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6 hover:border-rose-500/50 transition-all">
+                    <div class="bg-emerald-600/10 text-emerald-400 w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Pengiriman Safe Box</h3>
+                        <p class="text-slate-400 text-xs mt-1">Jaminan Box Mulus Sampai Rumah</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Double Box + Heavy Bubble Wrap</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Ekspedisi JNE, J&T, SiCepat, AnterAja</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Instant Courier (GoSend / GrabExpress)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Garansi Penukaran Size (S&K Berlaku)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white bg-slate-800/50 hover:bg-slate-800 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div>
+                <span class="text-rose-400 text-xs font-bold uppercase tracking-widest">Order Form WhatsApp Wild Nana</span>
+                <h3 class="text-2xl font-black text-white mt-1">Pemesanan Sepatu</h3>
+                <p class="text-slate-400 text-xs mt-1">Pesanan Anda akan langsung dirangkum dan diteruskan ke WhatsApp Official Wild Nana (<strong class="text-white">0812-3456-7890</strong>)</p>
+            </div>
+
+            <form id="order-form" onsubmit="submitOrder(event)" class="space-y-4">
+                <input type="hidden" id="form-product-name">
+                <input type="hidden" id="form-product-price">
+                
+                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Model Sepatu:</span>
+                        <span id="display-prod-name" class="font-bold text-white text-right"></span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-slate-400">Harga Produk:</span>
+                        <span id="display-prod-price" class="font-bold text-emerald-400"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Pilih Ukuran (Size)</label>
+                    <select id="form-size" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                        <option value="">-- Pilih Ukuran --</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nama Pemesan</label>
+                        <input type="text" id="form-name" required placeholder="Nama lengkap Anda" class="w-full bg-slate-950 border border-slate-800 text-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nomor WhatsApp</label>
+                        <input type="tel" id="form-phone" required placeholder="0812xxxxxxxx" class="w-full bg-slate-950 border border-slate-800 text-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Metode Pembayaran (Cash / Angsuran / Transfer)</label>
+                    <select id="form-payment" required class="w-full bg-slate-950 border border-slate-800 text-slate-200 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                        <option value="">-- Pilih Metode Pembayaran --</option>
+                        <optgroup label="E-Wallet & Angsuran PayLater">
+                            <option value="DANA (Cash / Angsuran DANA Cicil)">DANA (Cash / Angsuran DANA Cicil)</option>
+                            <option value="OVO (Cash / OVO PayLater)">OVO (Cash / OVO PayLater)</option>
+                            <option value="GoPay (Cash / GoPayLater Cicil)">GoPay (Cash / GoPayLater Cicil)</option>
+                            <option value="ShopeePay (Cash / SPayLater)">ShopeePay (Cash / SPayLater)</option>
+                        </optgroup>
+                        <optgroup label="Transfer Bank Resmi">
+                            <option value="Transfer BCA (Bank Central Asia)">Transfer BCA (Bank Central Asia)</option>
+                            <option value="Transfer BSI (Bank Syariah Indonesia)">Transfer BSI (Bank Syariah Indonesia)</option>
+                            <option value="Transfer BM (Bank Mandiri)">Transfer BM (Bank Mandiri)</option>
+                            <option value="Transfer BNI / BRI">Transfer BNI / BRI</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Alamat Pengiriman Lengkap</label>
+                    <textarea id="form-address" required rows="3" placeholder="Nama Jalan, Nomor Rumah, RT/RW, Kecamatan, Kota, Kode Pos" class="w-full bg-slate-950 border border-slate-800 text-slate-200 p-4 rounded-xl text-sm focus:outline-none focus:border-rose-500"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-all shadow-xl shadow-emerald-600/30 flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Kirim Pesanan ke WhatsApp (0812-3456-7890)</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact & Footer Section -->
+    <footer id="kontak" class="bg-slate-950 border-t border-slate-900 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-slate-900">
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-rose-600 p-2.5 rounded-xl">
+                            <i class="fa-solid fa-shoe-prints text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-black tracking-wider text-white">WILD NANA SHOES</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+                        Pusat jual beli sepatu branded & sneakers original 100% Brand New In Box (BNIB). Melayani pembayaran Cash, Angsuran E-Wallet (DANA, OVO, GoPay), hingga Transfer Bank Resmi (BCA, BSI, BM).
+                    </p>
+                    <div class="flex items-center space-x-4 pt-2">
+                        <a href="https://wa.me/6281234567890" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-rose-400 hover:border-rose-500/50 transition-all">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-400 hover:border-amber-500/50 transition-all">
+                            <i class="fa-brands fa-tiktok text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Navigasi Utama</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-white transition-colors">Katalog & Stok</a></li>
+                        <li><a href="#metode-pembayaran" class="hover:text-white transition-colors">Metode Pembayaran</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition-colors">Kontak WA</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Layanan WA Official</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <span>WA: 0812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-regular fa-clock text-rose-400 text-lg"></i>
+                            <span>Setiap Hari (09.00 - 21.00 WIB)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-location-dot text-amber-400 text-lg"></i>
+                            <span>Jakarta & Bandung, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Wild Nana Shoes. All rights reserved. Authorized Branded Store.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-slate-400">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // Database Produk Sepatu Branded Wild Nana Lengkap (Model, Brand, Ukuran, Harga, Stok, Spesifikasi)
+        const products = [
+            {
+                id: 1,
+                name: "Nike Air Jordan 1 Retro High OG 'Lost & Found'",
+                model: "Air Jordan 1 High",
+                brand: "Nike",
+                price: 3450000,
+                stock: 7,
+                sizes: ["39", "40", "41", "42", "43", "44", "45"],
+                specs: "Leather upper premium, Vintage aged finish, Nike Air sole cushioning, Original Box BNIB 100%",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Jordan+1+Lost+Found"
+            },
+            {
+                id: 2,
+                name: "Adidas Yeezy Boost 350 V2 'Bone / White'",
+                model: "Yeezy Boost 350 V2",
+                brand: "Adidas",
+                price: 3800000,
+                stock: 4,
+                sizes: ["40", "41", "42", "43", "44"],
+                specs: "Primeknit upper fleksibel, Boost midsole responsive, Translucent side stripe, Authentic BNIB",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Yeezy+Boost+350"
+            },
+            {
+                id: 3,
+                name: "New Balance 550 White Grey 'Pristine'",
+                model: "NB 550 Classic",
+                brand: "New Balance",
+                price: 2100000,
+                stock: 12,
+                sizes: ["38", "39", "40", "41", "42", "43", "44"],
+                specs: "Full Leather & Mesh upper, Durable Rubber outsole, Siluet basketball retro original",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=New+Balance+550"
+            },
+            {
+                id: 4,
+                name: "Salomon XT-6 Advanced 'Lichen Rock / Lunar'",
+                model: "Salomon XT-6",
+                brand: "Salomon",
+                price: 2950000,
+                stock: 3,
+                sizes: ["40", "41", "42", "43", "44", "45"],
+                specs: "Trail running mesh, Agile Chassis System, Quicklace lacing system, Contagrip rubber sole",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Salomon+XT-6"
+            },
+            {
+                id: 5,
+                name: "Nike Dunk Low Retro 'White Black (Panda)'",
+                model: "Dunk Low",
+                brand: "Nike",
+                price: 1850000,
+                stock: 15,
+                sizes: ["37", "38", "39", "40", "41", "42", "43", "44"],
+                specs: "Synthetic smooth leather, Lightweight Foam midsole, Classic low-top design icon",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Nike+Dunk+Panda"
+            },
+            {
+                id: 6,
+                name: "Adidas Samba OG 'Cloud White / Core Black'",
+                model: "Samba OG",
+                brand: "Adidas",
+                price: 1950000,
+                stock: 9,
+                sizes: ["39", "40", "41", "42", "43", "44"],
+                specs: "Full grain leather upper, Suede T-toe overlay, Gum rubber indoor outsole",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Adidas+Samba+OG"
+            },
+            {
+                id: 7,
+                name: "Asics Gel-Kayano 14 'White Metallic Silver'",
+                model: "Gel-Kayano 14",
+                brand: "Asics",
+                price: 2650000,
+                stock: 6,
+                sizes: ["40", "41", "42", "43", "44"],
+                specs: "Mesh & synthetic overlays, GEL technology cushioning, Retro 2000s running style",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=Asics+Gel+Kayano+14"
+            },
+            {
+                id: 8,
+                name: "New Balance 1906R 'Metallic Silver Grey'",
+                model: "NB 1906R",
+                brand: "New Balance",
+                price: 2450000,
+                stock: 8,
+                sizes: ["39", "40", "41", "42", "43", "44"],
+                specs: "ACTEVA LITE midsole, N-ergy shock absorption, Web outsole technology",
+                image: "https://placehold.co/600x400/1e293b/cbd5e1?text=New+Balance+1906R"
+            }
+        ];
+
+        let activeBrand = 'all';
+
+        // Format Currency IDR
+        function formatIDR(amount) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        // Toggle Mobile Menu Navigation
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Switch View (Grid vs Table)
+        function switchView(view) {
+            const gridEl = document.getElementById('product-grid');
+            const tableEl = document.getElementById('product-table-view');
+            const btnGrid = document.getElementById('btn-grid');
+            const btnTable = document.getElementById('btn-table');
+
+            if(view === 'grid') {
+                gridEl.classList.remove('hidden');
+                tableEl.classList.add('hidden');
+                btnGrid.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 text-white transition-all";
+                btnTable.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all";
+            } else {
+                gridEl.classList.add('hidden');
+                tableEl.classList.remove('hidden');
+                btnTable.className = "px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 text-white transition-all";
+                btnGrid.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all";
+            }
+        }
+
+        // Filter Brand
+        function filterBrand(brand) {
+            activeBrand = brand;
+            const buttons = document.querySelectorAll('.brand-btn');
+            buttons.forEach(btn => {
+                if((brand === 'all' && btn.innerText.includes('Semua')) || btn.innerText.toLowerCase() === brand.toLowerCase()) {
+                    btn.className = "brand-btn active-filter px-4 py-2 rounded-xl text-xs font-bold bg-rose-600 text-white transition-all";
+                } else {
+                    btn.className = "brand-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition-all";
+                }
+            });
+            applyFilters();
+        }
+
+        // Apply Search and Brand Filters
+        function applyFilters() {
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            const filtered = products.filter(p => {
+                const matchesBrand = activeBrand === 'all' || p.brand.toLowerCase() === activeBrand.toLowerCase();
+                const matchesSearch = p.name.toLowerCase().includes(searchVal) || 
+                                      p.model.toLowerCase().includes(searchVal) || 
+                                      p.brand.toLowerCase().includes(searchVal) ||
+                                      p.specs.toLowerCase().includes(searchVal);
+                return matchesBrand && matchesSearch;
+            });
+            renderProducts(filtered);
+        }
+
+        // Render Products Data
+        function renderProducts(data) {
+            const gridEl = document.getElementById('product-grid');
+            const tableBodyEl = document.getElementById('product-table-body');
+
+            gridEl.innerHTML = '';
+            tableBodyEl.innerHTML = '';
+
+            if (data.length === 0) {
+                gridEl.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">Sepatu tidak ditemukan. Silakan gunakan kata kunci lain.</div>`;
+                tableBodyEl.innerHTML = `<tr><td colspan="6" class="text-center py-12 text-slate-500 font-medium">Sepatu tidak ditemukan.</td></tr>`;
+                return;
+            }
+
+            // Render Cards to Grid
+            data.forEach(prod => {
+                const stockBadge = prod.stock > 5 ? `<span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-semibold">Stok: ${prod.stock} Pcs</span>` : `<span class="bg-amber-500/20 text-amber-400 text-xs px-2.5 py-1 rounded-full font-semibold">Stok Sisa: ${prod.stock} Pcs</span>`;
+                
+                const sizesStr = JSON.stringify(prod.sizes).replace(/"/g, '&quot;');
+                const prodNameEsc = prod.name.replace(/'/g, "\\'");
+
+                gridEl.innerHTML += `
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-rose-500/50 transition-all flex flex-col justify-between group shadow-xl">
+                        <div>
+                            <div class="relative overflow-hidden aspect-video bg-slate-950">
+                                <img src="${prod.image}" alt="${prod.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Wild+Nana+Shoes'">
+                                <div class="absolute top-4 left-4">
+                                    <span class="bg-slate-900/90 backdrop-blur-md text-rose-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">${prod.brand}</span>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    ${stockBadge}
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <div>
+                                    <span class="text-xs text-rose-400 font-semibold">Model: ${prod.model}</span>
+                                    <h3 class="text-lg font-bold text-white leading-snug group-hover:text-rose-300 transition-colors">${prod.name}</h3>
+                                </div>
+                                <p class="text-xs text-slate-400 leading-relaxed">${prod.specs}</p>
+                                <div class="flex flex-wrap items-center gap-1.5 pt-1">
+                                    <span class="text-[11px] text-slate-500 font-medium mr-1">Size:</span>
+                                    ${prod.sizes.map(s => `<span class="bg-slate-950 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-800">${s}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/80 mt-4">
+                            <div>
+                                <span class="text-[10px] uppercase text-slate-500 block font-medium">Harga Resmi</span>
+                                <span class="text-lg font-extrabold text-emerald-400">${formatIDR(prod.price)}</span>
+                            </div>
+                            <button onclick="openModal('${prodNameEsc}', ${prod.price}, ${sizesStr})" class="bg-rose-600 hover:bg-rose-500 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-lg shadow-rose-600/20 flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Order WA</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                // Render Rows to Table
+                tableBodyEl.innerHTML += `
+                    <tr class="hover:bg-slate-800/50 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-white">
+                            <div class="flex items-center space-x-3">
+                                <img src="${prod.image}" class="w-10 h-10 rounded-lg object-cover bg-slate-950 flex-shrink-0" onerror="this.src='https://placehold.co/100x100/1e293b/cbd5e1?text=Shoe'">
+                                <div>
+                                    <div class="font-bold text-white">${prod.name}</div>
+                                    <div class="text-xs text-rose-400 font-normal">Model: ${prod.model} (${prod.brand})</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-4 px-6">
+                            <div class="flex flex-wrap gap-1 max-w-xs">
+                                ${prod.sizes.map(s => `<span class="bg-slate-950 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-800">${s}</span>`).join('')}
+                            </div>
+                        </td>
+                        <td class="py-4 px-6 font-bold text-emerald-400 whitespace-nowrap">${formatIDR(prod.price)}</td>
+                        <td class="py-4 px-6 whitespace-nowrap">
+                            <span class="font-semibold ${prod.stock > 5 ? 'text-emerald-400' : 'text-amber-400'}">${prod.stock} Pcs</span>
+                        </td>
+                        <td class="py-4 px-6 text-xs text-slate-400 max-w-xs leading-relaxed">${prod.specs}</td>
+                        <td class="py-4 px-6 text-center whitespace-nowrap">
+                            <button onclick="openModal('${prodNameEsc}', ${prod.price}, ${sizesStr})" class="bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition-all shadow-md inline-flex items-center space-x-1.5">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Order WA</span>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Live Search Input Listener
+        document.getElementById('search-input').addEventListener('input', applyFilters);
+
+        // Modal Controls
+        function openModal(prodName, prodPrice, sizesArray) {
+            const modal = document.getElementById('checkout-modal');
+            document.getElementById('form-product-name').value = prodName;
+            document.getElementById('form-product-price').value = prodPrice;
+            document.getElementById('display-prod-name').innerText = prodName;
+            document.getElementById('display-prod-price').innerText = formatIDR(prodPrice);
+
+            const sizeSelect = document.getElementById('form-size');
+            sizeSelect.innerHTML = '<option value="">-- Pilih Ukuran --</option>';
+            sizesArray.forEach(sz => {
+                sizeSelect.innerHTML += `<option value="${sz}">Size ${sz}</option>`;
+            });
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Submit Order Form to WhatsApp
+        function submitOrder(e) {
+            e.preventDefault();
+            const prodName = document.getElementById('form-product-name').value;
+            const prodPrice = document.getElementById('form-product-price').value;
+            const size = document.getElementById('form-size').value;
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const payment = document.getElementById('form-payment').value;
+            const address = document.getElementById('form-address').value;
+
+            const message = `Halo Admin Wild Nana Shoes, saya mau memesan sepatu:%0A%0A*Model Sepatu:* ${prodName}%0A*Ukuran Size:* ${size}%0A*Harga:* ${formatIDR(prodPrice)}%0A*Metode Pembayaran:* ${payment}%0A%0A*Nama Pembeli:* ${name}%0A*No HP/WA:* ${phone}%0A*Alamat Pengiriman:* ${address}%0A%0AMohon info total tagihan dan nomor rekening/tujuan pembayaran selanjutnya. Terima kasih!`;
+
+            const waNumber = "6281234567890";
+            const waUrl = `https://wa.me/${waNumber}?text=${message}`;
+            
+            showToast("Mengarahkan ke WhatsApp Admin (0812-3456-7890)...");
+            setTimeout(() => {
+                window.open(waUrl, '_blank');
+                closeModal();
+            }, 1000);
+        }
+
+        // Show Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+
+        // Initial Page Load
+        window.onload = function() {
+            renderProducts(products);
+        }
+    </script>
+</body>
+</html>
